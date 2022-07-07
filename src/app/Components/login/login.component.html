@@ -1,14 +1,31 @@
-<h4>Login</h4>
-<form>
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 log1 ">
+      <h4>Login</h4>
+<form [formGroup]="loginform" (ngSubmit)="login()" >
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">User ID</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"formControlName="userid">
+      
     </div>
+    <div *ngIf="this.loginform.get('userid')?.touched&&this.loginform.get('userid')?.errors"
+    style="color: red;"> invalid account number </div>
+
+
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="password" class="form-control" id="exampleInputPassword1"formControlName="password">
     </div>
+    <div *ngIf="this.loginform.get('password')?.touched&&this.loginform.get('password')?.errors"
+    style="color: red;"> invalid account number </div>
+
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button routerLink="dashboard" type="submit" class="btn btn-primary">Submit</button>&nbsp;
+    <button routerLink="register" type="submit" class="btn btn-primary">Register</button>
+
   </form>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
