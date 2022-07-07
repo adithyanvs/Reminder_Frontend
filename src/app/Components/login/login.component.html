@@ -10,7 +10,7 @@
       
     </div>
     <div *ngIf="this.loginform.get('userid')?.touched&&this.loginform.get('userid')?.errors"
-    style="color: red;"> invalid account number </div>
+    style="color: red;"> Invalid User ID </div>
 
 
     <div class="mb-3">
@@ -18,7 +18,7 @@
       <input type="password" class="form-control" id="exampleInputPassword1"formControlName="password">
     </div>
     <div *ngIf="this.loginform.get('password')?.touched&&this.loginform.get('password')?.errors"
-    style="color: red;"> invalid account number </div>
+    style="color: red;"> Invalid Password </div>
 
     
     <button routerLink="dashboard" type="submit" class="btn btn-primary">Submit</button>&nbsp;

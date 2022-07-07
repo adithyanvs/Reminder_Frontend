@@ -3,23 +3,29 @@
     <div class="col-4"></div>
     <div class="col-4 col1">
       <h4>Register</h4>
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">User Name</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">User ID</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+      <form [formGroup]="RegisterForm" (ngSubmit)="register()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">User Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="userName">
+        </div>
+        <div *ngIf="this.RegisterForm.get('userName')?.touched&&this.RegisterForm.get('userName')?.errors"
+          style="color: red;"> Invalid Username </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">User ID</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="userId">
+        </div>
+        <div *ngIf="this.RegisterForm.get('userId')?.touched&&this.RegisterForm.get('userId')?.errors"
+          style="color: red;"> Invalid UserID </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+        <div *ngIf="this.RegisterForm.get('password')?.touched&&this.RegisterForm.get('password')?.errors"
+          style="color: red;"> Invalid Password </div><br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
     <div class="col-4"></div>
   </div>

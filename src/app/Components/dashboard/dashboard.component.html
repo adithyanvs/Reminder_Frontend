@@ -3,16 +3,19 @@
     <div class="col-4"></div>
     <div class="col-4 col1 ">
       <h4>Dashboard</h4>
-<form >
+<form [formGroup]="eventForm" (ngSubmit)="event()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Enter Date</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
     </div>
+    <div *ngIf="this.eventForm.get('date')?.touched&&this.eventForm.get('date')?.errors"
+          style="color: red;"> Invalid Date </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Event Description</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="text">
     </div>
+    <div *ngIf="this.eventForm.get('text')?.touched&&this.eventForm.get('text')?.errors"
+          style="color: red;"> Invalid Description </div><br>
     
     <button type="submit" class="btn btn-primary">Add Event</button> &nbsp;
     <button routerLink="/eventform" type="submit" class="btn btn-primary">View Event</button>
@@ -23,3 +26,4 @@
     <div class="col-4"></div>
   </div>
 </div>
+
