@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/dataservice.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,12 +15,36 @@ export class DashboardComponent implements OnInit {
   })
 
   
-  constructor(private fb:FormBuilder) { }
+  constructor(private ds: DataService,private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
+    if(!localStorage.getItem("token")){
+      alert("Please Login")
+      this.router.navigateByUrl("")
+    }
   }
-  event(){
-    console.log("click");
+  addevent(): void {
+    // var userid = this.eventForm.value.acno
+    // var password = this.eventForm.value.pswd
+    var date =this.eventForm.value.date
+    var event = this.eventForm.value.text
+    if(this.eventForm.valid){
+    const result = this.ds.addevent(date, event)
+    .subscribe((result:any) =>{
+      if(result){
+        alert(result.message)
+      }
+    },
+    result =>{
+      alert(result.error.message)
+    }
+    )
     
   }
+  else{
+      alert("invalid Form")
+    }
+  }
+
+  
 }

@@ -3,10 +3,10 @@
     <div class="col-4"></div>
     <div class="col-4 col1 ">
       <h4>Dashboard</h4>
-<form [formGroup]="eventForm" (ngSubmit)="event()">
+<form [formGroup]="eventForm" >
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Enter Date</label>
-      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
     </div>
     <div *ngIf="this.eventForm.get('date')?.touched&&this.eventForm.get('date')?.errors"
           style="color: red;"> Invalid Date </div>
@@ -17,7 +17,7 @@
     <div *ngIf="this.eventForm.get('text')?.touched&&this.eventForm.get('text')?.errors"
           style="color: red;"> Invalid Description </div><br>
     
-    <button type="submit" class="btn btn-primary">Add Event</button> &nbsp;
+    <button type="submit" class="btn btn-primary" (ngSubmit)="addevent()">Add Event</button> &nbsp;
     <button routerLink="/eventform" type="submit" class="btn btn-primary">View Event</button>
     
   </form>

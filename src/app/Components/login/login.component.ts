@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    var userid = this.loginform.value.acno
-    var password = this.loginform.value.pswd
+    var userid = this.loginform.value.userid
+    var password = this.loginform.value.password
 
     if (this.loginform.valid) {
       //asynchronous
