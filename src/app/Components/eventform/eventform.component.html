@@ -1,20 +1,23 @@
 <br><br>
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <h4>Events</h4>
-            <table >
+        <div class="col-3"></div>
+        <div id="table" class="col-6">
+            <h4><strong>Events</strong></h4>
+            <hr>
+            <table class="table1" >
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Event Name</th>
+                        <th>Events</th>
                     </tr>
+                    
                 </thead>
                 <tbody>
-                    <tr >
-                      <th>1</th>
-                      <th>2</th>
+                    <tr *ngFor="let i of events">
+                      <th>{{i.date}}</th>
+                      <th>{{i.event}}</th>
+                      <th><button  type="submit" class="btn btn-primary">Edit</button>&nbsp;<button  type="submit" class="btn btn-danger">Delete</button></th>
                     </tr>
                     
                     
@@ -22,6 +25,6 @@
                </table>
             
         </div>
-        <div class="col-4"></div>
+        <div class="col-3"><button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button></div>
     </div>
 </div>

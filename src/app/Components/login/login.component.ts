@@ -31,11 +31,13 @@ export class LoginComponent implements OnInit {
       this.ds.login(userid, password)
       .subscribe((result:any) =>{
         if (result) {
+          console.log(result);
+          
           localStorage.setItem('currentUser',result.currentUser)
-          localStorage.setItem('currentuserid',result.currentAcno)
+          localStorage.setItem('currentuserid',result.currentuserid)
           localStorage.setItem('token',result.token)
           alert(result.message)
-          this.router.navigateByUrl(`dashboard`)
+          this.router.navigateByUrl(`eventform`)
         }
 
       },

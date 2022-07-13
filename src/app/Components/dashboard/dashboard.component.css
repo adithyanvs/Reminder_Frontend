@@ -1,3 +1,13 @@
 .col1{
     margin-top: 20px;
 }
+.mid{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 2%;
+    box-shadow: 3px 1px 10px #888888;
+}
+.View{
+    margin-top: -30%;
+    margin-left: 73%;
+}

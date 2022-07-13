@@ -1,26 +1,33 @@
 <div class="container">
   <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 col1 ">
-      <h4>Dashboard</h4>
-<form [formGroup]="eventForm" >
+    <div class="col-4 col1 mid">
+      <h4 style="text-align: center;">Dashboard</h4>
+<form [formGroup]="eventForm" (ngSubmit)="addevent()" >
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Enter Date</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
+      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="date">
     </div>
     <div *ngIf="this.eventForm.get('date')?.touched&&this.eventForm.get('date')?.errors"
           style="color: red;"> Invalid Date </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Event Description</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="text">
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="message">
     </div>
     <div *ngIf="this.eventForm.get('text')?.touched&&this.eventForm.get('text')?.errors"
           style="color: red;"> Invalid Description </div><br>
     
-    <button type="submit" class="btn btn-primary" (ngSubmit)="addevent()">Add Event</button> &nbsp;
-    <button routerLink="/eventform" type="submit" class="btn btn-primary">View Event</button>
+    <button type="submit" class="btn btn-primary" (ngSubmit)="addevent()">Add Event</button> &nbsp; <br><br>
+    <button  type="submit" class="btn btn-primary View"routerLink='/eventform'>View Event</button>
     
   </form>
+  <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button>
+  <button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button>
+
+  <button class="btn btn-danger" (click)="deleteAccount()" style="float: right;margin-right: 3%;">Delete</button>
+<!-- child selector -->
+<!-- <app-delete-cancel (onDelete)="onDelete($event)" (onCancel)="cancel()" [item]="currentuserid"></app-delete-cancel> -->
+<!-- <app-animation-demo></app-animation-demo> -->
 
     </div>
     <div class="col-4"></div>

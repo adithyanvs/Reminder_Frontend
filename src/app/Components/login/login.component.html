@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-4"></div>
@@ -19,12 +22,20 @@
     </div>
     <div *ngIf="this.loginform.get('password')?.touched&&this.loginform.get('password')?.errors"
     style="color: red;"> Invalid Password </div>
-
+   <br>
     
-    <button routerLink="login" type="submit" class="btn btn-primary">Submit</button>&nbsp;
-    <button routerLink="register" type="submit" class="btn btn-primary">Register</button>
+    <div class="bootom">
+      <button  type="submit" class="btn btn-primary">Login</button>
+        <span class="spanclass">Not a User?</span>&nbsp;&nbsp;&nbsp;
+        <button routerLink="register" type="submit" class="btn btn-success">Register</button>
+    </div>
+    
 
   </form>
+  <!-- <div class="regsection">
+    <span class="spanclass">Not a User??</span>
+    <button routerLink="register" type="submit" class="btn btn-primary regbt">Register</button>
+  </div> -->
     </div>
     <div class="col-4"></div>
   </div>

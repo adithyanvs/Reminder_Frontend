@@ -10,6 +10,7 @@ import { EventformComponent } from './Components/eventform/eventform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteCancelComponent } from './delete-cancel/delete-cancel.component';
+import { DeletepopComponent } from './Components/deletepop/deletepop.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DeleteCancelComponent } from './delete-cancel/delete-cancel.component';
     LoginComponent,
     DashboardComponent,
     EventformComponent,
-    DeleteCancelComponent
+    DeleteCancelComponent,
+    DeletepopComponent
   ],
   imports: [
     BrowserModule,

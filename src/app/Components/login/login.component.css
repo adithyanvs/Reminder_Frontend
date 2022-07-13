@@ -1,4 +1,14 @@
 .log1{
-    margin-top: 200px;
+    /* margin: 10%; */
+    margin-top: 5%;
+    /* padding: 3%; */
+    /* background-color:rgb(243, 235, 235); */
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 2%;
+    box-shadow: 3px 1px 10px #888888;
     
+}
+.spanclass{
+margin-left: 35%;
 }
