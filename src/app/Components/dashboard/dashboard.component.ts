@@ -14,9 +14,13 @@ export class DashboardComponent implements OnInit {
     date: [''],
     message: ['']
   })
-  
+  user:any
+  lDate:any
 
-  constructor(private ds: DataService, private fb: FormBuilder, private router: Router) { }
+  constructor(private ds: DataService, private fb: FormBuilder, private router: Router) { 
+    this.user=localStorage.getItem("currentUser")
+    this.lDate=new Date()
+  }
 
   ngOnInit(): void {
     if (!localStorage.getItem("token")) {

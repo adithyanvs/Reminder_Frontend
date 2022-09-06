@@ -12,7 +12,12 @@ export class EventformComponent implements OnInit {
   events:any
   currentuserid =localStorage.getItem('currentuserid')
   
+  user:any
+  lDate:any
+  
   constructor(private ds :DataService,private router: Router) {
+    this.user=localStorage.getItem("currentUser")
+    this.lDate=new Date()
     this.ds.getEvent(this.currentuserid)
     .subscribe((result:any) =>{
       console.log(result);
