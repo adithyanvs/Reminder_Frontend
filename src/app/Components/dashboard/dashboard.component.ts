@@ -34,8 +34,8 @@ export class DashboardComponent implements OnInit {
     console.log(message);
 
 
-
-    this.ds.addevent(date, message)
+    if(this.eventForm.valid){
+      this.ds.addevent(date, message)
       .subscribe((result: any) => {
         if (result) {
           alert(result.message)
@@ -46,6 +46,10 @@ export class DashboardComponent implements OnInit {
           alert(result.error.message)
         }
       )
+    }else{
+      alert("please fill the field")
+    }
+    
 
   }
   //Logout

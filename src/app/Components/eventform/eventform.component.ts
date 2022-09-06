@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/dataservice.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-eventform',
@@ -10,7 +12,7 @@ export class EventformComponent implements OnInit {
   events:any
   currentuserid =localStorage.getItem('currentuserid')
   
-  constructor(private ds :DataService) {
+  constructor(private ds :DataService,private router: Router) {
     this.ds.getEvent(this.currentuserid)
     .subscribe((result:any) =>{
       console.log(result);
@@ -25,5 +27,14 @@ export class EventformComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  deleteAccount(){
+    
+  }
+  //Logout
+  logout(){
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("currentuserid")
+    localStorage.removeItem("token")
+    this.router.navigateByUrl("")
+  }
 }

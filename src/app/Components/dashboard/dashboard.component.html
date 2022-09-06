@@ -17,20 +17,22 @@
     <div *ngIf="this.eventForm.get('text')?.touched&&this.eventForm.get('text')?.errors"
           style="color: red;"> Invalid Description </div><br>
     
-    <button type="submit" class="btn btn-primary" (ngSubmit)="addevent()">Add Event</button> &nbsp; <br><br>
-    <button  type="submit" class="btn btn-primary View"routerLink='/eventform'>View Event</button>
+    <button type="submit" class="btn btn-primary" (ngSubmit)="addevent()">Add Event</button> &nbsp; <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button  type="submit" class="btn btn-primary View"routerLink='/eventform'>Back</button>
     
   </form>
-  <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button>
-  <button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button>
+  <!-- <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button>
+  <button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button> -->
 
-  <button class="btn btn-danger" (click)="deleteAccount()" style="float: right;margin-right: 3%;">Delete</button>
+  <!-- <button class="btn btn-danger" (click)="deleteAccount()" style="float: right;margin-right: 3%;">Delete</button> -->
 <!-- child selector -->
 <!-- <app-delete-cancel (onDelete)="onDelete($event)" (onCancel)="cancel()" [item]="currentuserid"></app-delete-cancel> -->
 <!-- <app-animation-demo></app-animation-demo> -->
 
     </div>
-    <div class="col-4"></div>
+    <div class="col-4"><br><br>
+      <!-- <button routerLink="/eventform" class="btn btn-secondary">Back</button> -->
+    </div>
   </div>
 </div>
 

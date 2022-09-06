@@ -8,13 +8,15 @@
             <table class="table1" >
                 <thead>
                     <tr>
+                        <th>Sl No:</th>
                         <th>Date</th>
                         <th>Events</th>
                     </tr>
                     
                 </thead>
                 <tbody>
-                    <tr *ngFor="let i of events">
+                    <tr *ngFor="let i of events; let k = index">
+                      <th>{{k+1}}.</th>
                       <th>{{i.date}}</th>
                       <th>{{i.event}}</th>
                       <th><button  type="submit" class="btn btn-primary">Edit</button>&nbsp;<button  type="submit" class="btn btn-danger">Delete</button></th>
@@ -25,6 +27,12 @@
                </table>
             
         </div>
-        <div class="col-3"><button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button></div>
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button><br><br>
+            <!-- <button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button><br><br> -->
+
+            <button routerLink="/dashboard" class="btn btn-secondary">Back</button>
+        
+        </div>
     </div>
 </div>
