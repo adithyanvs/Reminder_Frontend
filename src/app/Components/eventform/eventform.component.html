@@ -1,8 +1,12 @@
 <br><br>
 <div class="container">
     <div class="row">
-        <h2 style="color: rgb(17, 171, 243);"><span>Welcome</span>  {{user}}</h2><br>
-    <h5 style="color: rgb(21, 2, 2);">{{lDate|date:'short'}}</h5>
+        <div class="divi">
+            <h2 style="color: rgb(17, 171, 243);"><span>Welcome</span>  {{user}}</h2>
+            <h5 style="color: rgb(21, 2, 2);">{{lDate|date:'short'}}</h5>
+            <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button>
+        
+        </div>
         <div class="col-3"></div>
         <div id="table" class="col-6">
             <h4><strong>Events</strong></h4>
@@ -21,7 +25,8 @@
                       <th>{{k+1}}.</th>
                       <th>{{i.date}}</th>
                       <th>{{i.event}}</th>
-                      <th><button  type="submit" class="btn btn-primary">Edit</button>&nbsp;<button  type="submit" class="btn btn-danger">Delete</button></th>
+                      <th><button  type="submit" (click)="removeEvent(k)" class="btn btn-primary">Edit</button>&nbsp;
+                        <button  type="submit" class="btn btn-danger">Delete</button></th>
                     </tr>
                     
                     
@@ -30,10 +35,11 @@
             
         </div>
         <div class="col-3">
-            <button type="submit" class="btn btn-primary" (click)="logout()">Log Out</button><br><br>
+            <br><br>
             <!-- <button type="submit" class="btn btn-primary" (click)="deleteAccount()">Delete Account</button><br><br> -->
 
-            <button routerLink="/dashboard" class="btn btn-secondary">Back</button>
+            <button routerLink="/dashboard" class="btn btn-secondary">Add Event</button> <br> <br>
+            <button routerLink="/dashboard" class="btn btn-success">Back</button>
         
         </div>
     </div>

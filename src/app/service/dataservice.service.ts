@@ -69,6 +69,12 @@ export class DataService {
     return this.http.delete('http://localhost:3000/deleteAcc/' + currentuserid, this.getOptions())
 
   }
-
+//remove event
+removeEvent(k:any){
+  const data ={
+    k
+  }
+  return this.http.post('http://localhost:3000/deleteevent',data,this.getOptions())
+}
 
 }

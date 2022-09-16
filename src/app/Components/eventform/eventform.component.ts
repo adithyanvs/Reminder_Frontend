@@ -35,6 +35,18 @@ export class EventformComponent implements OnInit {
   deleteAccount(){
     
   }
+  removeEvent(k:any){
+  let value = k;
+  this.ds.removeEvent(value)
+  .subscribe((result:any) =>{
+    if(result){
+      window.location.reload();
+    }
+  },
+  result =>{
+    alert(result.error.message)
+  })
+  }
   //Logout
   logout(){
     localStorage.removeItem("currentUser")
